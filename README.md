@@ -23,6 +23,7 @@ The script can be configured by setting the following environment variables:
 * PRIVATE\_SUBNET - private subnet configuration, "10.9.0.0/24" by default
 * SERVER\_HOST - public IP address, detected by default
 * SERVER\_PORT - listening port, picked random by default
+* CLIENT\_DNS - comma separated DNS servers to use by the client
 
 ## Setting up clients
 
@@ -30,7 +31,7 @@ The script can be configured by setting the following environment variables:
 
 Install WireGuard and reboot your computer:
 
-    sudo add-apt-repository ppa:wireguard/wireguard -y && sudo apt update && sudo apt install wireguard -y
+    sudo add-apt-repository ppa:wireguard/wireguard -y && sudo apt update && sudo apt install wireguard resolvconf -y
     sudo reboot
 
 Copy the file `/root/client-wg0.conf` from a remote server to your local PC path `/etc/wireguard/wg0.conf` and run 
